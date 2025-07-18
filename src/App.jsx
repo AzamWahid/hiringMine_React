@@ -1,23 +1,23 @@
 import React from 'react';
 import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import StepsSection from './components/StepsSection';
-import DreamJobSection from './components/DreamJobSection';
-import CareerOptionsSection from './components/CareerOptionsSection';
-import ComingSoonSection from './components/ComingSoonSection';
-import Footer from './components/Footer';
 import './style.css';
+import { Route, Router, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 
 function App() {
   return (
     <div className="container-fluid">
       <Navbar />
-      <HeroSection />
-      <StepsSection />
-      <DreamJobSection />
-      <CareerOptionsSection />
-      <ComingSoonSection />
-      <Footer />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/login' element={<Login />} />
+      </Routes>
+
     </div>
   );
 }
